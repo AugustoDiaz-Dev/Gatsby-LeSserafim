@@ -1,0 +1,47 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+}
+h1 {
+  font-family: 'Square Peg', cursive;
+  font-size: 4rem;
+}
+.header h2 {
+  font-size: 4em;
+}
+.header h3 {
+  font-size: 3em;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-block;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, 
+  rgba(2,0,36,1) 0%, rgba(242,30,221,1) 35%);
+  border: 2px solid white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+.btn:hover {
+  background: rgb(2,0,36);
+  background: linear-gradient(270deg, 
+  rgba(2,0,36,1) 0%, rgba(242,30,221,1) 35%);
+  border: 2px solid white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+footer {
+  margin-top: 10rem;
+}

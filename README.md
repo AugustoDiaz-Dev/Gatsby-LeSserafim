@@ -1,1 +1,3 @@
-# Gatsby-LeSserafim
+# Le Sserafim
+
+npm i animate.css
