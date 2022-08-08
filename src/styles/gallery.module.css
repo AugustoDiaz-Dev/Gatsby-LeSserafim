@@ -11,18 +11,26 @@
   font-weight: 400;
   text-align: left;
 }
-.projects {
+.pictures {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 80px;
   margin: 80px 20px;
 }
-.projects h3 {
+.pictures h3 {
   text-align: center;
   margin: 20px auto 0px;
   font-weight: 500;
 }
-.projects p {
+.pictures p {
   color: #ccc;
   margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .pictures {
+   display: flex;
+    flex-direction: column;
+
+  }
 }

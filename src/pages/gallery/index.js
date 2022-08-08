@@ -1,24 +1,23 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../../components/Layout'
-import * as styles from "../../styles/projects.module.css"
+import * as styles from "../../styles/gallery.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-export default function Projects({ data }) {
-    console.log(data.projects.nodes[0].frontmatter.thumb.childImageSharp.gatsbyImageData)
-    const projects = data.projects.nodes
+export default function Gallery({ data }) {
+    console.log(data.gallery.nodes[0].frontmatter.thumb.childImageSharp.gatsbyImageData)
+    const gallery = data.gallery.nodes
     const contact = data.contact.siteMetadata.contact
     return (
         <Layout>
             <div className={styles.portfolio}>
-                <h2>Gallery</h2>
-                <h3>포토 갤러리</h3>
-                <div className={styles.projects}>
-                    {projects.map(project => (
-                        <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
+                <h2>갤러리</h2>
+                <div className={styles.pictures}>
+                    {gallery.map(item => (
+                        <Link to={"/gallery/" + item.frontmatter.slug} key={item.id}>
                             <div>
-                                <GatsbyImage image={getImage(project.frontmatter.thumb)} alt="Banner" quality={100} className="pic" /><h3>{project.frontmatter.title}</h3>
-                                <p>{project.frontmatter.stack}</p>
+                                <GatsbyImage image={getImage(item.frontmatter.thumb)} alt="Banner" quality={100} className="pic" /><h3>{item.frontmatter.title}</h3>
+                                <p>{item.frontmatter.stack}</p>
                             </div>
                         </Link>
                     ))}
@@ -33,8 +32,8 @@ export default function Projects({ data }) {
 }
 
 export const query = graphql`
-    query ProjectPage {
-    projects: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+    query GalleryPage {
+    gallery: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
         nodes {
         frontmatter {
             title

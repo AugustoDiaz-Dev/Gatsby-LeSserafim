@@ -19,9 +19,9 @@ export default function Navbar() {
         {title}
       </h2>
       <div className="links">
-        <Link to="/">Home 홈</Link>
-        <Link to="/about">About 에 대한</Link>
-        <Link to="/projects">Gallery 갤러리</Link>
+        <Link to="/">홈</Link>
+        <Link to="/about">우리에 대해</Link>
+        <Link to="/gallery">갤러리</Link>
       </div>
     </nav>
   )
