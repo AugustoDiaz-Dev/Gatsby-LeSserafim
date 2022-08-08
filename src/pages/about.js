@@ -6,8 +6,7 @@ const About = () => {
     return (
         <Layout>
             <section className='aboutContainer'>
-                <h2>About page</h2>
-                <h3>에 대한</h3>
+                <h2>우리에 대해</h2>
                 <p>
                     Le Sserafim is a South Korean girl group formed by Source Music and HYBE. The group consists of five members: Sakura, Kim Chae-won, Huh Yun-jin, Kazuha and Hong Eun-chae. Originally a sextet, Kim Ga-ram was removed from the group on July 20, 2022, after the termination of her exclusive contract.Le Sserafim debuted on May 2, 2022, with the release of their first extended play (EP) Fearless.
                 </p>

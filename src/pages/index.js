@@ -14,7 +14,7 @@ export default function Home({ data }) {
           <h3>I'm Fearless</h3>
           <h1>Le Sserafim</h1>
           <p>대한민국의 K팝 밴드</p>
-          <Link className={styles.btn} to="/projects">Gallery 갤러리</Link>
+          <Link className={styles.btn} to="/gallery">갤러리</Link>
         </div>
         <a href="https://le-sserafim.com/" className="banner">
           <GatsbyImage image={image} alt="Banner" className="radius" />
@@ -30,7 +30,6 @@ query Banner {
     childImageSharp {
       gatsbyImageData(
         layout: FULL_WIDTH
-        placeholder: BLURRED
         formats: [AUTO, WEBP]
         )
     }

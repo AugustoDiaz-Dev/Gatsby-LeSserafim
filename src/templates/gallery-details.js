@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import * as styles from '../styles/project-details.module.css';
+import * as styles from '../styles/gallery-details.module.css';
 import { graphql } from 'gatsby'
 
-function ProjectDetails({ data }) {
+function GalleryDetails({ data }) {
 
     const { html } = data.markdownRemark;
     const { title, stack, featuredImg } = data.markdownRemark.frontmatter;
@@ -23,10 +23,10 @@ function ProjectDetails({ data }) {
     )
 }
 
-export default ProjectDetails
+export default GalleryDetails
 
 export const query = graphql`
-query ProjectDetails($slug: String) {
+query GalleryDetails($slug: String) {
     markdownRemark(frontmatter: {slug: {eq: $slug}}) {
         html
         frontmatter {
