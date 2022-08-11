@@ -3,13 +3,18 @@ import { graphql, Link } from 'gatsby'
 import Layout from "../components/Layout"
 import * as styles from '../styles/home.module.css'
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { motion } from "framer-motion"
 
 export default function Home({ data }) {
   const image = getImage(data.file.childImageSharp.gatsbyImageData)
 
   return (
     <Layout>
-      <header className={styles.header}>
+      <motion.header className={styles.header}
+       initial={{opacity: 0, translateY: -500}}
+       animate={{opacity: 1, translateY: 0}}
+       transition={{duration: 1}}
+      >
         <div>
           <h3>I'm Fearless</h3>
           <h1>Le Sserafim</h1>
@@ -19,7 +24,7 @@ export default function Home({ data }) {
         <a href="https://le-sserafim.com/" className="banner">
           <GatsbyImage image={image} alt="Banner" className="radius" />
         </a>
-      </header>
+      </motion.header>
     </Layout>
   )
 }
