@@ -1,3 +1,4 @@
+// This file is going to run at build time in a nodejs environment.
 const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions }) => {

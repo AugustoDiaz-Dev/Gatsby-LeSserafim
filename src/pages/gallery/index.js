@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../../components/Layout'
 import * as styles from "../../styles/gallery.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {motion } from 'framer-motion'
 
 export default function Gallery({ data }) {
     console.log(data.gallery.nodes[0].frontmatter.thumb.childImageSharp.gatsbyImageData)
@@ -13,12 +14,16 @@ export default function Gallery({ data }) {
             <div className={styles.portfolio}>
                 <h2>갤러리</h2>
                 <div className={styles.pictures}>
-                    {gallery.map(item => (
+                    {gallery.map((item, i) => (
                         <Link to={"/gallery/" + item.frontmatter.slug} key={item.id}>
-                            <div>
+                            <motion.div 
+                            initial={{opacity: 0, translateX: -50, translateY: -50}}
+                            animate={{opacity: 1, translateX: 0, translateY: 0}}
+                            transition={{duration: 0.3, delay: i * 0.5}}
+                            >
                                 <GatsbyImage image={getImage(item.frontmatter.thumb)} alt="Banner" quality={100} className="pic" /><h3>{item.frontmatter.title}</h3>
                                 <p>{item.frontmatter.stack}</p>
-                            </div>
+                            </motion.div>
                         </Link>
                     ))}
                 </div>
@@ -43,7 +48,6 @@ export const query = graphql`
             childImageSharp {
                 gatsbyImageData(
                     layout: FULL_WIDTH
-                    placeholder: BLURRED
                     formats: [AUTO, WEBP]
                 )
             }

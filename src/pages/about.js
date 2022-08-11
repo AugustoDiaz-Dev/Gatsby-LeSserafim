@@ -1,11 +1,28 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import '../styles/about.module.css'
+import {motion} from 'framer-motion'
 
 const About = () => {
     return (
         <Layout>
-            <section className='aboutContainer'>
+            <motion.section className='aboutContainer'
+            initial="hidden"
+            animate="visible"
+            variants={{
+                hidden: {
+                    scale: .8, 
+                    opacity: 0,
+                }, 
+                visible: {
+                    scale: 1, 
+                    opacity: 1, 
+                    transition: {
+                        delay: .4
+                    }}
+                }}
+            
+            >
                 <h2>우리에 대해</h2>
                 <p>
                     Le Sserafim is a South Korean girl group formed by Source Music and HYBE. The group consists of five members: Sakura, Kim Chae-won, Huh Yun-jin, Kazuha and Hong Eun-chae. Originally a sextet, Kim Ga-ram was removed from the group on July 20, 2022, after the termination of her exclusive contract.Le Sserafim debuted on May 2, 2022, with the release of their first extended play (EP) Fearless.
@@ -13,7 +30,14 @@ const About = () => {
                 <p>
                     The group's name, Le Sserafim, is an anagram of the phrase "I'm Fearless".
                 </p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/4vbDFu0PUew" title="Le Sserafim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <motion.iframe width="560" height="315" src="https://www.youtube.com/embed/4vbDFu0PUew" title="Le Sserafim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                whileHover={{
+                    scale: 2.5, 
+                    transition: {
+                        duration: .2
+                    }
+                }}
+                ></motion.iframe>
                 {/* <p>
                     <small>I'm Fearless. 2022</small>
                 </p> */}
@@ -23,7 +47,7 @@ const About = () => {
                 <p>
                     그룹명 Le Sserafim은 I'm Fearless'의 아나그램이다.
                 </p>
-            </section>
+            </motion.section>
         </Layout >
     );
 }
