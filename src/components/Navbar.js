@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import {AiFillHome} from 'react-icons/ai'
 
 export default function Navbar() {
   const data = useStaticQuery(graphql`
@@ -20,9 +19,9 @@ export default function Navbar() {
         {title}
       </h2>
       <div className="links">
-        <Link to="/">홈 Home</Link>
-        <Link to="/about">약 About</Link>
-        <Link to="/gallery">사진 Pics</Link>
+        <Link to="/">홈</Link>
+        <Link to="/about">우리에 대해</Link>
+        <Link to="/gallery">갤러리</Link>
       </div>
     </nav>
   )
