@@ -1,4 +1,4 @@
-# Le Sserafim
+# Le Sserafim (Gatsby)
 
 - "framer-motion": "^7.1.0",
 - "gatsby": "^4.9.3",
